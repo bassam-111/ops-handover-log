@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Handover note — {{ note.log_date }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>Handover: {{ note.log_date }} ({{ note.shift }} shift)</h1>
+  <p><strong>{{ note.outgoing }} → {{ note.incoming }}</strong> — Status: {{ note.status }}</p>
+  <h2>Pending items</h2>
+  <p>{{ note.pending_items or "Nothing pending." }}</p>
+  <h2>Blockers</h2>
+  <p>{{ note.blockers or "None." }}</p>
+  <p><a href="{{ url_for('index') }}">← Back to log</a></p>
+</body>
+</html>

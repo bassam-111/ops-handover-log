@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Handover summary</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>Handover summary</h1>
+  <p>Total notes: {{ total }} | Unresolved notes with blockers: {{ open_blockers }}</p>
+  <h2>By status</h2>
+  <ul>{% for row in by_status %}<li>{{ row.status }}: {{ row.n }}</li>{% endfor %}</ul>
+  <h2>By shift</h2>
+  <ul>{% for row in by_shift %}<li>{{ row.shift }}: {{ row.n }}</li>{% endfor %}</ul>
+  <p><a href="{{ url_for('index') }}">← Back to log</a></p>
+</body>
+</html>

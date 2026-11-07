@@ -1,0 +1,7 @@
+body { font-family: system-ui, sans-serif; max-width: 800px; margin: 2rem auto; padding: 0 1rem; color: #222; }
+table { border-collapse: collapse; width: 100%; margin-top: 1rem; }
+th, td { border: 1px solid #ccc; padding: 0.5rem; text-align: left; }
+label { display: block; margin: 0.75rem 0; }
+input, select, textarea { width: 100%; padding: 0.4rem; margin-top: 0.25rem; box-sizing: border-box; }
+button { padding: 0.5rem 1rem; cursor: pointer; }
+.error { color: #b00020; }

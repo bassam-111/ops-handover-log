@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Add handover note</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>Add handover note</h1>
+  {% if error %}<p class="error">{{ error }}</p>{% endif %}
+  <form method="post">
+    <label>Date: <input type="date" name="log_date" required></label>
+    <label>Shift:
+      <select name="shift">{% for s in shifts %}<option>{{ s }}</option>{% endfor %}</select>
+    </label>
+    <label>Outgoing (leaving): <input type="text" name="outgoing" required></label>
+    <label>Incoming (taking over): <input type="text" name="incoming" required></label>
+    <label>Pending items: <textarea name="pending_items" rows="3"></textarea></label>
+    <label>Blockers: <textarea name="blockers" rows="2"></textarea></label>
+    <label>Status:
+      <select name="status">
+        <option>Open</option><option>Handed over</option><option>Resolved</option>
+      </select>
+    </label>
+    <button type="submit">Save note</button>
+  </form>
+  <p><a href="{{ url_for('index') }}">← Back to log</a></p>
+</body>
+</html>
